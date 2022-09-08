@@ -113,7 +113,7 @@ app.get("/users/:id", (req, res) => {
   return sendResponse(res.status(404), null);
 });
 
-app.post("/users/:id", (req, res) => {
+app.post("/users", (req, res) => {
   const body = req.body || {};
   ITEMS.users.push({...body, id: crypto.randomUUID() });
   return sendResponse(res.status(201), ITEMS.users[ITEMS.users.length - 1]);
