@@ -10,7 +10,6 @@ npm install
 
 npm start
 
-
 ## Endpoints
 GET /users - will get the list of users
 
