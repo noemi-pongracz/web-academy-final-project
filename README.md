@@ -10,11 +10,12 @@ npm install
 
 npm start
 
-
 ## Endpoints
 GET /users - will get the list of users
 
 GET /users/:id - will return the user by id
+
+POST /users - will add a user and generate and id for it
 
 PUT users/:id - will update a user based on ID
 
