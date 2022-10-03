@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="spinner spinner--active"></div>
+        <header class="header">
+            <p class="logo">Sport club members</p>
+        </header>
+        <main class="main-content">
+            <aside class="aside" id="members-container">
+            </aside>
+            <section class="section add-member" id="add-member-section">
+                <h2 class="section__title">Add new member</h2>
+                <hr class="section__divider">
+                <form class="section__form form" id="add-member-form">
+                    <div class="toast__container"></div>
+                    <div class="form__wrapper form__first-name-field">
+                        <label for="firstName" class="form__label">First name</label>
+                        <input type="text" name="firstName" class="form__input" required>
+                    </div>
+                    <div class="form__wrapper form__last-name-field">
+                        <label for="lastName" class="form__label">Last name</label>
+                        <input type="text" name="lastName" class="form__input" required>
+                    </div>
+                    <div class="form__wrapper form__address-field">
+                        <label for="streetAndNumber" class="form__label">Address</label>
+                        <input type="text" name="streetAndNumber" class="form__input" required>
+                    </div>
+                    <div class=" form__wrapper form__zip-code-field">
+                        <label for="postalCode" class="form__label">Zip code</label>
+                        <input type="text" name="postalCode" required pattern="[0-9]*" minlength="5" maxlength="6"
+                            class="form__input" oninvalid="this.setCustomValidity('The zipcode must be five or six digit long')"
+                            oninput="this.setCustomValidity('')">
+                    </div>
+                    <div class=" form__wrapper form__city-field">
+                        <label for="city" class="form__label">City</label>
+                        <input type="text" name="city" class="form__input" required>
+                    </div>
+                    <div class=" form__wrapper form__country-field">
+                        <label for="country" class="form__label">Country</label>
+                        <input type="text" name="country" class="form__input" required>
+                    </div>
+                    <div class="form__wrapper form__gender-field">
+                        <label for="gender" class="form__label">Gender</label>
+                        <select name="gender" class="form__select" required>
+                            <option value="male">male</option>
+                            <option value="female">female</option>
+                            <option value="not-specified" selected>not specified</option>
+                        </select>
+                    </div>
+                    <div class="form__wrapper form__age-field">
+                        <label for="age" class="form__label">Age</label>
+                        <input type="number" name="age" class="form__input" min="1" required>
+                    </div>
+                    <div class=" form__wrapper form__activity-field">
+                        <div class="form__label">Activity Class</div>
+                        <fieldset class="form__fieldset">
+                            <div class="radio-btn-wrapper">
+                                <input type="radio" name="activity_class" value="professional" required>
+                                <label for="professional">Professional</label>
+                            </div>
+                            <div class="radio-btn-wrapper">
+                                <input type="radio" name="activity_class" value="amateur" required>
+                                <label for="amateur">Amateur</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="checkbox-section__wrapper form__sports">
+                        <h3 class="checkbox-section__title">Practiced sports</h3>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" name="sports" value="running">
+                            <label for="sports-running">running</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" name="sports" value="cycling">
+                            <label for="sports-cycling">cycling</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" name="sports" value="swimming">
+                            <label for="sports-swimming">swimming</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" name="sports" value="walking">
+                            <label for="sports-walking">walking</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" name="sports" value="skiing">
+                            <label for="sports-skiing">skiing</label>
+                        </div>
+                    </div>
+                    <input type="submit" value="Save" class="form__submit-btn btn">
+                </form>
+            </section>
+            <section class="section edit-member hide" id="edit-member-section">
+                <div class="toast__container"></div>
+                <h2 class="section__title">Edit member</h2>
+                <hr class="section__divider">
+                <form action="" class="section__form form" id="edit-member-form">
+                    <div class="form__wrapper form__first-name-field">
+                        <label for="firstName" class="form__label">First name</label>
+                        <input type="text" name="firstName" class="form__input" required>
+                    </div>
+                    <div class="form__wrapper form__last-name-field">
+                        <label for="lastName" class="form__label">Last name</label>
+                        <input type="text" name="lastName" class="form__input" required>
+                    </div>
+                    <div class="form__wrapper form__address-field">
+                        <label for="streetAndNumber" class="form__label">Address</label>
+                        <input type="text" name="streetAndNumber" class="form__input" required>
+                    </div>
+                    <div class=" form__wrapper form__zip-code-field">
+                        <label for="postalCode" class="form__label">Zip code</label>
+                        <input type="text" name="postalCode" required pattern="[0-9]*" minlength="5" maxlength="6"
+                        class="form__input" oninvalid="this.setCustomValidity('The zipcode must be five or six digit long')"
+                        oninput="this.setCustomValidity('')">
+                    </div>
+                    <div class=" form__wrapper form__city-field">
+                        <label for="city" class="form__label">City</label>
+                        <input type="text" name="city" class="form__input" required>
+                    </div>
+                    <div class=" form__wrapper form__country-field">
+                        <label for="country" class="form__label">Country</label>
+                        <input type="text" name="country" class="form__input" required>
+                    </div>
+                    <div class="form__wrapper form__gender-field">
+                        <label for="gender" class="form__label">Gender</label>
+                        <select name="gender" class="form__select" required>
+                            <option value="male">male</option>
+                            <option value="female">female</option>
+                            <option value="not-specified" selected>not specified</option>
+                        </select>
+                    </div>
+                    <div class="form__wrapper form__age-field">
+                        <label for="age" class="form__label">Age</label>
+                        <input type="number" name="age" class="form__input" min="1" required>
+                    </div>
+                    <div class=" form__wrapper form__activity-field">
+                        <div class="form__label">Activity Class</div>
+                        <fieldset class="form__fieldset">
+                            <div class="radio-btn-wrapper">
+                                <input type="radio" name="activity_class" value="professional" required>
+                                <label for="professional">Professional</label>
+                            </div>
+                            <div class="radio-btn-wrapper">
+                                <input type="radio" name="activity_class" value="amateur" required>
+                                <label for="amateur">Amateur</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="checkbox-section__wrapper form__sports">
+                        <h3 class="checkbox-section__title">Practiced sports</h3>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" name="sports" value="running">
+                            <label for="sports-running">running</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" name="sports" value="cycling">
+                            <label for="sports-cycling">cycling</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" name="sports" value="swimming">
+                            <label for="sports-swimming">swimming</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" name="sports" value="walking">
+                            <label for="sports-walking">walking</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" name="sports" value="skiing">
+                            <label for="sports-skiing">skiing</label>
+                        </div>
+                    </div>
+                    <input name="id" type="hidden">
+                    <input type="submit" value="Update" class="form__submit-btn btn form__desktop-submit" disabled="disabled">
+
+                </form>
+                <button class="section__back-btn btn" id="edit-back-btn">Back</button>
+            </section>
+            <footer class="footer">
+                <nav class="nav">
+                    <ul class="nav__menu">
+                        <li class="nav__item"><a href="$" class="nav__link">Recent news</a></li>
+                        <li class="nav__item"><a href="$" class="nav__link">About us</a></li>
+                        <li class="nav__item"><a href="$" class="nav__link">Services</a></li>
+                        <li class="nav__item"><a href="$" class="nav__link">Contact us</a></li>
+                    </ul>
+                </nav>
+            </footer>
+        </main>
+    </div>
+    <div class="modal">
+        <div class="modal__container">
+            <header class="modal__header">Delete member</header>
+            <div class="modal__content">
+                <p class="modal__text"></p>
+                <div class="modal__actions">
+                    <button class="btn modal__no-btn">No</button>
+                    <button class="btn modal__yes-btn">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
