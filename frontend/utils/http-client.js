@@ -18,7 +18,6 @@ class HttpClient {
         return undefined;
     }
 
-
     setHeader(key, value) {
         this.headers[key] = value;
         return this;
